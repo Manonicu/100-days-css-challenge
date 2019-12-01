@@ -17,11 +17,13 @@ export default {
 		DropdownItem,
 		Day01: () => import("@/components/Day01"),
 		Day02: () => import("@/components/Day02"),
-		Day03: () => import("@/components/Day03")
+		Day03: () => import("@/components/Day03"),
+		Day04: () => import("@/components/Day04"),
+		Day05: () => import("@/components/Day05")
 	},
 	data() {
 		return {
-			selected: "01",
+			selected: "05",
 			options: []
 		};
 	},
