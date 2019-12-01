@@ -1,0 +1,121 @@
+<template>
+	<div class="demo" id="demo" @click="_click($event)">
+		<div class="line line1"></div>
+		<div class="line line2"></div>
+		<div class="line line3"></div>
+	</div>
+</template>
+
+<script>
+	export default {
+		name: "Day01",
+		methods: {
+			_click(e) {
+				e.currentTarget.classList.toggle("active");
+				document.body.classList.remove("load");
+			}
+		}
+	};
+</script>
+
+<style lang="less" scoped>
+	.demo {
+		position: relative;
+		width: 30vw;
+		height: 1vw;
+	}
+	.line {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		border-radius: 5px;
+		filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.25));
+		transform-origin: 50% 50%;
+		transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+		top: 0;
+		left: 0;
+	}
+	.line2 {
+		transform: scale(1);
+		transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+	.line1,
+	.line3 {
+		background-color: #fff;
+		border-radius: 5px;
+		transform: translateY(-750%) rotate(0);
+	}
+	.line3 {
+		transform: translateY(750%) rotate(0);
+	}
+	.demo.active .line2 {
+		transform: scale(0);
+		transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+	.demo.active .line1 {
+		animation: moveBefore 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+	.demo.active .line3 {
+		animation: moveAfter 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+	.demo .line1 {
+		animation: afterMoveBefore 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+	.demo .line3 {
+		animation: afterMoveAfter 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+	.demo .line2 {
+		transition-delay: 0.5s;
+	}
+	.load .demo .line1 {
+		animation: none;
+	}
+	.load .demo .line3 {
+		animation: none;
+	}
+	@keyframes afterMoveBefore {
+		0% {
+			transform: translateY(0) rotate(-45deg);
+		}
+		50% {
+			transform: translateY(0) rotate(0);
+		}
+		100% {
+			transform: translateY(-750%) rotate(0);
+		}
+	}
+	@keyframes afterMoveAfter {
+		0% {
+			transform: translateY(0) rotate(45deg);
+		}
+		50% {
+			transform: translateY(0) rotate(0);
+		}
+		100% {
+			transform: translateY(750%) rotate(0);
+		}
+	}
+	@keyframes moveBefore {
+		0% {
+			transform: translateY(-750%) rotate(0);
+		}
+		50% {
+			transform: translateY(0) rotate(0);
+		}
+		100% {
+			transform: translateY(0) rotate(-45deg);
+		}
+	}
+	@keyframes moveAfter {
+		0% {
+			transform: translateY(750%) rotate(0);
+		}
+		50% {
+			transform: translateY(0) rotate(0);
+		}
+		100% {
+			transform: translateY(0) rotate(45deg);
+		}
+	}
+</style>

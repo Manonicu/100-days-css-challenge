@@ -1,96 +1,72 @@
 <template>
 	<div class="demo" id="demo">
-		<div class="sun"></div>
-		<div class="pyramid">
-			<div class="shadow"></div>
-		</div>
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
 	</div>
 </template>
-
-<script>
-export default {
-	name: "Day01",
-	methods: {
-		_click(e) {
-			e.currentTarget.classList.toggle("active");
-			document.body.classList.remove("load");
-		}
-	}
-};
-</script>
 
 <style lang="less" scoped>
 .demo {
 	position: relative;
-	width: 50vw;
-	height: 50vw;
-	background-color: #a3dcfb;
-	border-radius: 100%;
-	overflow: hidden;
-	clip-path: circle();
+	width: 300px;
+	height: 300px;
 }
-.demo::after {
+.circle1,
+.circle2,
+.circle3 {
 	position: absolute;
-	display: block;
-	content: "";
-	width: 50vw;
-	height: 10vw;
-	background-color: #ebde79;
-	left: 0;
-	bottom: 0;
-}
-.sun {
-	position: absolute;
-	width: 10vw;
-	height: 10vw;
-	background-color: #faed27;
-	border-radius: 50%;
-	transform: translate3d(-5vw, 100%, 0);
-}
-.pyramid {
-	position: absolute;
-	display: flex;
+	width: 100%;
+	height: 100%;
+	top: 50%;
 	left: 50%;
-	bottom: 10vw;
-	transform: translateX(-50%);
-	/* overflow: hidden; */
+	border-radius: 50%;
+	background-color: #fff;
+	transform: translate3d(-50%, -50%, 0) scale(0);
+	animation-fill-mode: both;
+	animation: circleBefore 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
-.pyramid::after,
-.pyramid::before {
-	display: block;
-	content: "";
-	width: 0;
-	height: 0;
-	border: 8vw solid;
+.circle2 {
+	width: 60%;
+	height: 60%;
+	animation: circleAfter 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
-.pyramid::after {
-	border-color: transparent transparent #eeeeee transparent;
-	transform: skewX(52deg) translateX(-65%);
-	/* transform: scaleY(1) skewX(-30deg) rotate(30deg); */
+.circle3 {
+	width: 30%;
+	height: 30%;
+	animation: circle 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
-.pyramid::before {
-	border-color: transparent transparent #ffffff transparent;
-	transform: skewX(-35deg) translateX(35%);
-	/* transform: scaleY(1) skewX(30deg) rotate(30deg); */
-}
-.pyramid .shadow {
-	position: absolute;
-	border: 16vw solid;
-	border-color: rgba(0, 0, 0, 0.1) transparent transparent transparent;
-	left: 0;
-	bottom: 0;
-	transform: translateY(100%);
-}
-@keyframes sun {
-	0% {
-	}
-	25% {
-	}
-	50% {
-	}
-	75% {
+@keyframes circle {
+	0%,
+	70% {
+		box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+		transform: translate3d(-50%, -50%, 0) scale(0);
 	}
 	100% {
+		box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+		transform: translate3d(-50%, -50%, 0) scale(1);
+	}
+}
+@keyframes circleAfter {
+	0%,
+	40% {
+		box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+		transform: translate3d(-50%, -50%, 0) scale(0);
+	}
+	100% {
+		box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+		transform: translate3d(-50%, -50%, 0) scale(1);
+	}
+}
+@keyframes circleBefore {
+	0%,
+	10% {
+		box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+		transform: translate3d(-50%, -50%, 0) scale(0);
+	}
+	100% {
+		box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+		transform: translate3d(-50%, -50%, 0) scale(1);
 	}
 }
 </style>
