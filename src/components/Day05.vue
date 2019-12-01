@@ -128,7 +128,7 @@ export default {
 		.info {
 			margin-bottom: 60px;
 			font-size: 16px;
-			color: #786451;
+			color: @color;
 			small {
 				display: block;
 			}
@@ -138,12 +138,12 @@ export default {
 			width: 45%;
 			height: 30px;
 			line-height: 30px;
-			color: #786451;
-			border: 1px solid #786451;
+			color: @color;
+			border: 1px solid @color;
 			transition: background-color linear 0.25s;
 			border-radius: 20px;
 			&:hover {
-				background-color: currentColor;
+				background-color: @color;
 				transition: background-color linear 0.25s;
 				color: #ffffff;
 			}
