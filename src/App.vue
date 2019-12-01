@@ -19,7 +19,8 @@ export default {
 		Day02: () => import("@/components/Day02"),
 		Day03: () => import("@/components/Day03"),
 		Day04: () => import("@/components/Day04"),
-		Day05: () => import("@/components/Day05")
+		Day05: () => import("@/components/Day05"),
+		Day06: () => import("@/components/Day06")
 	},
 	data() {
 		return {
@@ -49,6 +50,11 @@ export default {
 </script>
 
 <style lang="less">
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body {
 	display: flex;
 	align-items: center;
