@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@color: #786450;
 .demo {
 	display: flex;
 	width: 100vw;
@@ -88,7 +89,7 @@ export default {
 				height: 80px;
 				border-width: 1px;
 				border-style: solid;
-				border-color: transparent #786450 #786450 #786450;
+				border-color: transparent @color @color @color;
 				border-radius: 50%;
 				transition: transform 1s cubic-bezier(0.78, 0.17, 0.24, 1.08);
 			}
@@ -99,7 +100,7 @@ export default {
 				left: 4px;
 				border-width: 1px;
 				border-style: solid;
-				border-color: #786450 #786450 transparent #786450;
+				border-color: @color @color transparent @color;
 				transition-duration: 0.4s;
 				transition-delay: 0.2s;
 			}
@@ -144,6 +145,7 @@ export default {
 			&:hover {
 				background-color: currentColor;
 				transition: background-color linear 0.25s;
+				color: #ffffff;
 			}
 		}
 		.child {
