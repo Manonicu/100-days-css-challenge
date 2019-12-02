@@ -189,17 +189,18 @@ export default {
 	align-items: center;
 	justify-content: center;
 	background-color: #264056;
+	font-size: 14px;
 	.content {
 		position: relative;
-		width: 50vw;
-		height: 50vh;
+		width: 300px;
+		height: 300px;
 		background-color: #fff;
 		transition: all 0.4s ease-in-out;
 		overflow: hidden;
 		z-index: 2;
 		header {
 			position: relative;
-			line-height: 8vh;
+			line-height: 50px;
 			background-color: #6199cb;
 			color: white;
 			text-align: center;
@@ -238,7 +239,7 @@ export default {
 	}
 	.timeline {
 		position: relative;
-		height: 42vh;
+		height: 250px;
 		padding: 15px 30px;
 		overflow: hidden;
 		&:before {
@@ -291,7 +292,7 @@ export default {
 		background-color: #43627c;
 		top: 50%;
 		left: 50%;
-		height: 40vh;
+		height: 250px;
 		flex-direction: column;
 		border-radius: 10px 0 0 10px;
 		transform: translate3d(-35%, -50%, 0);

@@ -10,8 +10,8 @@
 <style lang="less" scoped>
 .demo {
 	position: relative;
-	width: 50vw;
-	height: 50vw;
+	width: 300px;
+	height: 300px;
 	background-color: #a3dcfb;
 	border-radius: 100%;
 	overflow: hidden;
@@ -21,16 +21,16 @@
 	position: absolute;
 	display: block;
 	content: "";
-	width: 50vw;
-	height: 10vw;
+	width: 300px;
+	height: 60px;
 	background-color: #ebde79;
 	left: 0;
 	bottom: 0;
 }
 .sun {
 	position: absolute;
-	width: 10vw;
-	height: 10vw;
+	width: 60px;
+	height: 60px;
 	background-color: #faed27;
 	border-radius: 50%;
 	transform: translate3d(-5vw, 100%, 0);
@@ -39,7 +39,7 @@
 	position: absolute;
 	display: flex;
 	left: 50%;
-	bottom: 10vw;
+	bottom: 60px;
 	transform: translateX(-50%);
 	/* overflow: hidden; */
 }
@@ -49,7 +49,7 @@
 	content: "";
 	width: 0;
 	height: 0;
-	border: 8vw solid;
+	border: 40px solid;
 }
 .pyramid::after {
 	border-color: transparent transparent #eeeeee transparent;
@@ -63,7 +63,7 @@
 }
 .pyramid .shadow {
 	position: absolute;
-	border: 16vw solid;
+	border: 160px solid;
 	border-color: rgba(0, 0, 0, 0.1) transparent transparent transparent;
 	left: 0;
 	bottom: 0;

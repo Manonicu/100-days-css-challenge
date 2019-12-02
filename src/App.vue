@@ -3,7 +3,10 @@
 		<DropdownMenu class="dropdown">
 			<DropdownItem v-model="selected" :options="options" @select="_select"></DropdownItem>
 		</DropdownMenu>
-		<div :is="curCom"></div>
+		<div class="main">
+			<!--			<Sample />-->
+			<div :is="curCom"></div>
+		</div>
 	</div>
 </template>
 
@@ -15,6 +18,7 @@ export default {
 	components: {
 		DropdownMenu,
 		DropdownItem,
+		// Sample: () => import("@/common/Sample"),
 		Day01: () => import("@/components/Day01"),
 		Day02: () => import("@/components/Day02"),
 		Day03: () => import("@/components/Day03"),
@@ -55,19 +59,12 @@ export default {
 	padding: 0;
 	box-sizing: border-box;
 }
-body {
+.main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh - 50px);
 	background: #70ac83;
-}
-.dropdown {
-	position: absolute;
-	width: 100vw;
-	height: 5vh;
-	top: 0;
-	left: 0;
 }
 </style>

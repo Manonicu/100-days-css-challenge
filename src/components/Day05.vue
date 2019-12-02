@@ -53,8 +53,8 @@ export default {
 	background: linear-gradient(to top right, #ecbd72, #c97c53);
 	.content {
 		display: flex;
-		width: 50%;
-		height: 50%;
+		width: 300px;
+		height: 300px;
 		background-color: #fff;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 		border-radius: 15px;
@@ -142,6 +142,7 @@ export default {
 			border: 1px solid @color;
 			transition: background-color linear 0.25s;
 			border-radius: 20px;
+			font-size: 14px;
 			&:hover {
 				background-color: @color;
 				transition: background-color linear 0.25s;
