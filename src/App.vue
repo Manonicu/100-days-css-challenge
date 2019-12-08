@@ -4,7 +4,6 @@
 			<DropdownItem v-model="selected" :options="options" @select="_select"></DropdownItem>
 		</DropdownMenu>
 		<div class="main">
-			<!--			<Sample />-->
 			<div :is="curCom"></div>
 		</div>
 	</div>
@@ -18,13 +17,13 @@ export default {
 	components: {
 		DropdownMenu,
 		DropdownItem,
-		// Sample: () => import("@/common/Sample"),
 		Day01: () => import("@/components/Day01"),
 		Day02: () => import("@/components/Day02"),
 		Day03: () => import("@/components/Day03"),
 		Day04: () => import("@/components/Day04"),
 		Day05: () => import("@/components/Day05"),
-		Day06: () => import("@/components/Day06")
+		Day06: () => import("@/components/Day06"),
+		Day12: () => import("@/components/Day12")
 	},
 	data() {
 		return {
