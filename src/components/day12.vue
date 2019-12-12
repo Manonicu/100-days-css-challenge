@@ -2,16 +2,16 @@
 	<div class="demo" id="demo" ref="demo">
 		<div class="content">
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="@/assets/images/avatar.jpg" alt="" />
+				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
 			</div>
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="@/assets/images/avatar.jpg" alt="" />
+				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
 			</div>
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="@/assets/images/avatar.jpg" alt="" />
+				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
 			</div>
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="@/assets/images/avatar.jpg" alt="" />
+				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
 			</div>
 			<div
 				class="content__close"
@@ -23,7 +23,7 @@
 			>
 				&#10006;
 			</div>
-			<img src="@/assets/images/avatar.jpg" alt="" class="avatar" />
+			<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" class="avatar" />
 			<div class="content__top"></div>
 			<div class="content__bottom">
 				<h3>Julia Toth</h3>

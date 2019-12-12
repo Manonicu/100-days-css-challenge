@@ -8,7 +8,7 @@
 
 <script>
 export default {
-	name: "Day01",
+	name: "day01",
 	methods: {
 		_click(e) {
 			e.currentTarget.classList.toggle("active");
