@@ -27,9 +27,17 @@ jobs:
 
             - run: npm run build
 
-            - name: deploy
-              uses: peaceiris/actions-gh-pages@v2.5.0
-              env:
-                  ACTIONS_DEPLOY_KEY: ${{secrets.ACTIONS_DEPLOY_KEY}}
-                  PUBLISH_BRANCH: gh-pages
-                  PUBLISH_DIR: ./dist
+            # - name: deploy
+            #   uses: peaceiris/actions-gh-pages@v2.5.0
+            #   env:
+            #       ACTIONS_DEPLOY_KEY: ${{secrets.ACTIONS_DEPLOY_KEY}}
+            #       PUBLISH_BRANCH: gh-pages
+            #       PUBLISH_DIR: ./dist
+            - name: executing remote ssh commands using password
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ secrets.PORT }}
+                  script: whoami

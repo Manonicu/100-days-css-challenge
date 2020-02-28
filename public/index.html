@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 		<title>100-Days-Challenge-Css</title>
 		<link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
 		<script>
@@ -35,7 +37,7 @@
 
 				// reset rem unit on page resize
 				window.addEventListener("resize", setRemUnit);
-				window.addEventListener("pageshow", function(e) {
+				window.addEventListener("pageshow", function (e) {
 					if (e.persisted) {
 						setRemUnit();
 					}
@@ -60,9 +62,9 @@
 	<body>
 		<div id="app"></div>
 		<!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
-		<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 		<% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
 		<script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
 		<% } %>
 	</body>
+
 </html>
