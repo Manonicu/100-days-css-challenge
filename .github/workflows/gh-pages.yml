@@ -26,20 +26,13 @@ jobs:
             - run: npm ci
 
             - run: npm run build
-
-            # - name: deploy
-            #   uses: peaceiris/actions-gh-pages@v2.5.0
-            #   env:
-            #       ACTIONS_DEPLOY_KEY: ${{secrets.ACTIONS_DEPLOY_KEY}}
-            #       PUBLISH_BRANCH: gh-pages
-            #       PUBLISH_DIR: ./dist
             - uses: actions/checkout@master
-            - name: copy file via ssh password
-              uses: appleboy/scp-action@master
-              with:
-                  host: ${{ secrets.HOST }}
-                  username: ${{ secrets.USERNAME }}
-                  password: ${{ secrets.PASSWORD }}
-                  port: ${{ secrets.PORT }}
-                  source: "dist/*"
-                  target: "/usr/local/nginx/html/100-days-css-challenge"
+            - name: Deploy to Staging server
+              uses: easingthemes/ssh-deploy@v2.0.7
+              env:
+                  SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+                  ARGS: "-rltgoDzvO"
+                  SOURCE: "dist/"
+                  REMOTE_HOST: ${{ secrets.HOST }}
+                  REMOTE_USER: ${{ secrets.USER }}
+                  TARGET: ${{ secrets.TARGET }}
