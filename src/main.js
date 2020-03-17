@@ -12,6 +12,7 @@ Sentry.init({
 	integrations: [new Integrations.Vue({ Vue, attachProps: true })]
 });
 
+Vue.config.devtools = process.env.NODE_ENV !== 'production';
 Vue.config.productionTip = false;
 
 new Vue({

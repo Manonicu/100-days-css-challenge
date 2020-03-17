@@ -1,6 +1,6 @@
 <template>
 	<div class="h-screen w-screen bg-green-600 flex items-center justify-center" id="app">
-		<router-view />
+		<router-view></router-view>
 	</div>
 </template>
 
