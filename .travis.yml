@@ -8,8 +8,9 @@ before_install:
     -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host 139.199.189.12\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-
-after_success:
+install:
   - npm install
+script:
   - npm run build
-  - scp -o stricthostkeychecking=no -r dist/ travis@139.199.189.12:/usr/share/nginx/html/100-days-css-challenge
+after_success:
+  - rsync -az --delete ./dist/* travis@139.199.189.12:/usr/share/nginx/html/100-days-css-challenge
