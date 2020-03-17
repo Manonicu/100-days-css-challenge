@@ -12,4 +12,4 @@ before_install:
 after_success:
   - npm install
   - npm run build
-  - scp -o stricthostkeychecking=no -r dist/ travis@139.189.199.12:/usr/share/nginx/html/100-days-css-challenge'
+  - scp -o stricthostkeychecking=no -r dist/ travis@139.189.199.12:/usr/share/nginx/html/100-days-css-challenge
