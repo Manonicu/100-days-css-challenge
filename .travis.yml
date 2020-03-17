@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-- stable
+  - stable
 addons:
   ssh_known_hosts: 139.199.189.12
 before_install:
-- openssl aes-256-cbc -K $encrypted_c92ba44ece9b_key -iv $encrypted_c92ba44ece9b_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
-- eval "$(ssh-agent -s)"
-- chmod 600 /tmp/deploy_rsa
-- ssh-add /tmp/deploy_rsa
+  - openssl aes-256-cbc -K $encrypted_c92ba44ece9b_key -iv $encrypted_c92ba44ece9b_iv
+    -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh-add ~/.ssh/id_rsa
 install:
-- npm install
+  - npm install
 build:
-- npm run build
+  - npm run build
 deploy:
   provider: script
   skip_cleanup: true
