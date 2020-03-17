@@ -24,8 +24,6 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-node-
             - run: npm ci
-
-            - name: Build Application
             - run: npm run build
 
             - name: Deploy to Staging server
