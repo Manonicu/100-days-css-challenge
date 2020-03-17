@@ -13,4 +13,5 @@ install:
 script:
   - npm run build
 after_success:
-  - rsync -az --delete ./dist/* travis@139.199.189.12:/usr/share/nginx/html/100-days-css-challenge
+  - ls ./dist/*
+  - rsync -az --delete ./dist/* root@139.199.189.12:/usr/share/nginx/html/100-days-css-challenge
