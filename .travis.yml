@@ -6,6 +6,10 @@ addons:
 before_install:
   - openssl aes-256-cbc -K $encrypted_c92ba44ece9b_key -iv $encrypted_c92ba44ece9b_iv
     -in id_rsa.enc -out ~\/.ssh/id_rsa -d
-after_success:
   - chmod 600 ~/.ssh/id_rsa
-  - ssh travis@139.199.189.12 -o StrictHostKeyChecking=no 'cd ~/100-days-css-challenge && git pull && npm install && npm run build && cp -C dist/* /usr/share/nginx/html/100-days-css-challenge'
+  - echo -e "Host 139.199.189.12\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
+after_success:
+  - npm install
+  - npm run build
+  - scp -o stricthostkeychecking=no -r dist/ travis@139.189.199.12:/usr/share/nginx/html/100-days-css-challenge'
