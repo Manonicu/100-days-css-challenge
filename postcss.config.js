@@ -15,11 +15,11 @@ module.exports = {
 			add: true,
 			grid: true
 		}),
-		//Only add purgecss in production
-		process.env.NODE_ENV === "production"
-			? purgecss({
-					content: ["./src/**/*.html", "./src/**/*.vue"]
-			  })
-			: ""
+		// //Only add purgecss in production
+		// process.env.NODE_ENV === "production"
+		// 	? purgecss({
+		// 			content: ["./src/**/*.html", "./src/**/*.vue"]
+		// 	  })
+		// 	: ""
 	]
 };
