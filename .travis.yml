@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - stable
 addons:
-  ssh_known_hosts: 47.99.143.70
+  ssh_known_hosts: 139.199.189.12
 before_install:
   - openssl aes-256-cbc -K $encrypted_c92ba44ece9b_key -iv $encrypted_c92ba44ece9b_iv
     -in deploy_rsa.enc -out deploy_rsa -d
