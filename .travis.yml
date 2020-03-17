@@ -6,16 +6,6 @@ addons:
 before_install:
   - openssl aes-256-cbc -K $encrypted_c92ba44ece9b_key -iv $encrypted_c92ba44ece9b_iv
     -in id_rsa.enc -out ~\/.ssh/id_rsa -d
-  - eval "$(ssh-agent -s)"
+after_success:
   - chmod 600 ~/.ssh/id_rsa
-  - ssh-add ~/.ssh/id_rsa
-install:
-  - npm install
-build:
-  - npm run build
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist root@139.199.189.12:/usr/share/nginx/html/100-days-css-challenge
-  on:
-    branch: master
+  - ssh travis@139.199.189.12 -o StrictHostKeyChecking=no 'cd ~/100-days-css-challenge && git pull && npm install && npm run build && cp -C dist/* /usr/share/nginx/html/100-days-css-challenge'
