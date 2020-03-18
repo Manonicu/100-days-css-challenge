@@ -1,4 +1,4 @@
-name: "Tests"
+name: "install && build"
 
 on:
   pull_request:
