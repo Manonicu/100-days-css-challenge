@@ -59,15 +59,15 @@ export default {
 		.line3 {
 			animation: moveAfter 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 		}
-		.line1 {
-			animation: afterMoveBefore 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-		}
-		.line3 {
-			animation: afterMoveAfter 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-		}
-		.line2 {
-			transition-delay: 0.5s;
-		}
+	}
+	.line1 {
+		animation: afterMoveBefore 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+	.line3 {
+		animation: afterMoveAfter 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+	.line2 {
+		transition-delay: 0.5s;
 	}
 }
 .load {
