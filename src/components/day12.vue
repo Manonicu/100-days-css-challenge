@@ -2,16 +2,16 @@
 	<div class="demo" id="demo" ref="demo">
 		<div class="content">
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
+				<img src="@/assets/images/avatar.png" alt="" />
 			</div>
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
+				<img src="@/assets/images/avatar.png" alt="" />
 			</div>
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
+				<img src="@/assets/images/avatar.png" alt="" />
 			</div>
 			<div class="item" @click.stop="_toggleStatus">
-				<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
+				<img src="@/assets/images/avatar.png" alt="" />
 			</div>
 			<div
 				class="content__close"
@@ -23,7 +23,7 @@
 			>
 				&#10006;
 			</div>
-			<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" class="avatar" />
+			<img src="@/assets/images/avatar.png" alt="" class="avatar" />
 			<div class="content__top"></div>
 			<div class="content__bottom">
 				<h3>Julia Toth</h3>
@@ -60,8 +60,8 @@ export default {
 	.content {
 		position: relative;
 		display: flex;
-		width: 100vw;
-		height: 100%;
+		width: 50vw;
+		height: 50vw;
 		flex-wrap: wrap;
 		overflow: hidden;
 		&__top,
@@ -163,8 +163,8 @@ export default {
 	}
 	.item {
 		position: relative;
-		width: 50vw;
-		height: 50vw;
+		width: 50%;
+		height: 50%;
 		img {
 			width: 100%;
 			object-fit: cover;

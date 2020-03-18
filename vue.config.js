@@ -5,7 +5,7 @@ const resolve = dir => {
 };
 
 module.exports = {
-	publicPath:"/100-days-css-challenge/",
+	publicPath: "/100-days-css-challenge/",
 	configureWebpack: config => {
 		// 转为CND外链方式的npm包，键名是import的npm包名，键值是该库暴露的全局变量，参考https://webpack.js.org/configuration/externals/#src/components/Sidebar/Sidebar.jsx
 		config.externals = {

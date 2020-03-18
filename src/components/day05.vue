@@ -3,7 +3,7 @@
 		<div class="content">
 			<div class="side">
 				<div class="avatar">
-					<img src="https://avatars2.githubusercontent.com/u/12791216?s=460&v=4" alt="" />
+					<img src="@/assets/images/avatar.png" alt="" />
 				</div>
 				<div class="info">
 					Jessica Potter

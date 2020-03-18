@@ -3,7 +3,6 @@ import App from "./App.vue";
 import router from "./router";
 import "./registerServiceWorker";
 import "@/icons";
-import "@/assets/global.less";
 import * as Sentry from "@sentry/browser";
 import * as Integrations from "@sentry/integrations";
 
@@ -12,7 +11,7 @@ Sentry.init({
 	integrations: [new Integrations.Vue({ Vue, attachProps: true })]
 });
 
-Vue.config.devtools = process.env.NODE_ENV !== 'production';
+Vue.config.devtools = process.env.NODE_ENV !== "production";
 Vue.config.productionTip = false;
 
 new Vue({

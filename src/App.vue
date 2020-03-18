@@ -1,5 +1,5 @@
 <template>
-	<div class="h-screen w-screen bg-green-600 flex items-center justify-center" id="app">
+	<div class="app" id="app">
 		<router-view></router-view>
 	</div>
 </template>
@@ -14,3 +14,13 @@ export default {
 	}
 };
 </script>
+<style lang="less">
+#app {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	background-color: green;
+	align-items: center;
+	justify-content: center;
+}
+</style>
