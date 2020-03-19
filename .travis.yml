@@ -8,16 +8,16 @@ branches:
 script:
   - npm install
   - npm run build
+before_deploy:
+  - git config --local user.name "funnypan"
+  - git config --local user.email "gemini0525@foxmail.com"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $gh_token
-  local_dir: dist
+  provider: releases
+  file_glob: true
+  file: dist/*
+  api_key:
+    secure: LQr6u4mf0ia0RB6Py6TXHaWuFDZEb5Hfmp68MuenQbLMqbOZF1kvh1S/8GGhYbEhJlwvbrydAbBWj38dGQ7uwnV9qxnyESHls0T5sxN95B7vYBlHpOItfN3To6XF6fAT+S0h+8m3f5bQq+h//wf+3VZwR+Br8gt7/R4z1I08WqCOJG7cQYVOspK1Q8Iz+gjmffd7jCbx6JALoccklIzEca1Qaj3vhgCd4tB6aWQn7+crn9tlHj6ODaPDgk/4egwaRHVPlsbAxaw3W+fnu6ZYLF0fVN1tNXs3OfsYo6jTI6OFkeMvlOuOlUniiUwLrlKwjRUW+VPKtUdof34CPNQh+0+/LogVA7cHUZNypOY+xqe4SBzCV7KD9t5jfvaLhpmGxTO0LPjVF8PYt7CmWUvNtxGkrSYCMdug5aIHdW6jafMKa/kjmjArVMQrYxX5QIUdPhjYsCbYWcu+oc34hoH6QOOywdX2/cljZmhhP8887LaEG8yk9DnbK3OkQlFQoJuuUj0rmA3qGlSuLUMY+JziKYRAiK1h87BcGOFV63R2G6ZLJ2wLwfVF+OfRIkKRqkHZ3cGuyYucMU0Sz5nK2544YbXYYIyZWxCZn1kUtMaqXLpyZlob7Xg1VIWrJ0qMtSU1IYvxuyZIA4P+tGVN9QeMMSbfMNyAU053wG0xhUPK/uU=
   on:
-    branch: master
-# after_deploy:
-#   provider: releases
-#   api_key:
-#     secure: LQr6u4mf0ia0RB6Py6TXHaWuFDZEb5Hfmp68MuenQbLMqbOZF1kvh1S/8GGhYbEhJlwvbrydAbBWj38dGQ7uwnV9qxnyESHls0T5sxN95B7vYBlHpOItfN3To6XF6fAT+S0h+8m3f5bQq+h//wf+3VZwR+Br8gt7/R4z1I08WqCOJG7cQYVOspK1Q8Iz+gjmffd7jCbx6JALoccklIzEca1Qaj3vhgCd4tB6aWQn7+crn9tlHj6ODaPDgk/4egwaRHVPlsbAxaw3W+fnu6ZYLF0fVN1tNXs3OfsYo6jTI6OFkeMvlOuOlUniiUwLrlKwjRUW+VPKtUdof34CPNQh+0+/LogVA7cHUZNypOY+xqe4SBzCV7KD9t5jfvaLhpmGxTO0LPjVF8PYt7CmWUvNtxGkrSYCMdug5aIHdW6jafMKa/kjmjArVMQrYxX5QIUdPhjYsCbYWcu+oc34hoH6QOOywdX2/cljZmhhP8887LaEG8yk9DnbK3OkQlFQoJuuUj0rmA3qGlSuLUMY+JziKYRAiK1h87BcGOFV63R2G6ZLJ2wLwfVF+OfRIkKRqkHZ3cGuyYucMU0Sz5nK2544YbXYYIyZWxCZn1kUtMaqXLpyZlob7Xg1VIWrJ0qMtSU1IYvxuyZIA4P+tGVN9QeMMSbfMNyAU053wG0xhUPK/uU=
-#   on:
-#     tags: true
+    tags: true
