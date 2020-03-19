@@ -22,4 +22,4 @@ deploy:
   file_glob: true
   file: dist/*
   on:
-    repo: funnyPan/100-days-css-challenge
+    tags: true
