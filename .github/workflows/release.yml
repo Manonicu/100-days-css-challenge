@@ -1,23 +1,49 @@
 on:
   push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+    branches:
+      - typescript
+    paths:
+      - "package.json"
+      - "src/**"
+      - "public/**"
 
 name: Create Release
 
 jobs:
-  build:
-    - uses: actions/checkout@v2
-    - name: Setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: stable
-    - run: npm install
-    - run: npm build
-    name: Create Release
-      - name: Checkout code
-        uses: actions/checkout@master
+  publish:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [13.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout code
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+
+      - name: Use Node.js environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build distribution if needed
+        run: |
+          npm i
+          npm run build
+
+      - name: Update dist folder to current repository
+        run: |
+          git config --local user.email "gemini0525@foxmail.com"
+          git config --local user.name "funnypan"
+          git add dist
+          git commit -m "Auto commit version $(cat public/VERSION)"
+          git push -f https://funnypan:$GITHUB_TOKEN@github.com/funnypan/100-days-css-challenge.git master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
