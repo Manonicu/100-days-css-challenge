@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - typescript
+      - master
     paths:
       - "package.json"
       - "src/**"
