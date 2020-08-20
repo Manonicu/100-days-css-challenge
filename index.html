@@ -1,47 +1,65 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><title>100-Days-Challenge-Css</title><link rel=stylesheet href=https://unpkg.com/normalize.css@8.0.1/normalize.css><script>(function flexible(window, document) {
-				var docEl = document.documentElement;
-				var dpr = window.devicePixelRatio || 1;
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-				// adjust body font size
-				function setBodyFontSize() {
-					if (document.body) {
-						document.body.style.fontSize = 12 * dpr + "px";
-					} else {
-						document.addEventListener("DOMContentLoaded", setBodyFontSize);
-					}
-				}
-				setBodyFontSize();
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.15.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.15.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
 
-				// set 1rem = viewWidth / 10
-				function setRemUnit() {
-					if (docEl.clientWidth > 414) {
-						docEl.style.fontSize = "37.5px";
-					} else {
-						var rem = docEl.clientWidth / 10;
-						docEl.style.fontSize = rem + "px";
-					}
-				}
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-				setRemUnit();
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-				// reset rem unit on page resize
-				window.addEventListener("resize", setRemUnit);
-				window.addEventListener("pageshow", function (e) {
-					if (e.persisted) {
-						setRemUnit();
-					}
-				});
-
-				// detect 0.5px supports
-				if (dpr >= 2) {
-					var fakeBody = document.createElement("body");
-					var testElement = document.createElement("div");
-					testElement.style.border = ".5px solid transparent";
-					fakeBody.appendChild(testElement);
-					docEl.appendChild(fakeBody);
-					if (testElement.offsetHeight === 1) {
-						docEl.classList.add("hairlines");
-					}
-					docEl.removeChild(fakeBody);
-				}
-			})(window, document);</script><link href=/100-days-css-challenge/css/chunk-3ef72e18.911e45c6.css rel=prefetch><link href=/100-days-css-challenge/js/chunk-3ef72e18.1f767818.js rel=prefetch><link href=/100-days-css-challenge/css/app.1ebbc1aa.css rel=preload as=style><link href=/100-days-css-challenge/js/app.73cd7728.js rel=preload as=script><link href=/100-days-css-challenge/js/chunk-vendors.38dbcc0d.js rel=preload as=script><link href=/100-days-css-challenge/css/app.1ebbc1aa.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/100-days-css-challenge/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/100-days-css-challenge/img/icons/favicon-16x16.png><link rel=manifest href=/100-days-css-challenge/manifest.json><meta name=theme-color content=#4DBA87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content=demo><link rel=apple-touch-icon href=/100-days-css-challenge/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/100-days-css-challenge/img/icons/safari-pinned-tab.svg color=#4DBA87><meta name=msapplication-TileImage content=/100-days-css-challenge/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#000000></head><body><div id=app></div><script src=https://unpkg.com/vue@2.6.10/dist/vue.min.js></script><script src=/100-days-css-challenge/js/chunk-vendors.38dbcc0d.js></script><script src=/100-days-css-challenge/js/app.73cd7728.js></script></body></html>
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>

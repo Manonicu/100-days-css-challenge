@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/100-days-css-challenge/precache-manifest.832ffe575dd1697ee091de328bb12da1.js"
+  "/precache-manifest.6fcce97a49ee66ff92641aadc68ddcf0.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "demo"});
