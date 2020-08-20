@@ -7,11 +7,6 @@
 <script>
 export default {
 	name: "app",
-	watch: {
-		$route() {
-			this.$forceUpdate();
-		}
-	}
 };
 </script>
 <style lang="less">

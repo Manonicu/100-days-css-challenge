@@ -13,8 +13,8 @@ export default {
 		_click(e) {
 			e.currentTarget.classList.toggle("active");
 			document.body.classList.remove("load");
-		}
-	}
+		},
+	},
 };
 </script>
 

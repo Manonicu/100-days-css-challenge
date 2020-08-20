@@ -7,7 +7,9 @@
 		<meta name="viewport"
 			content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 		<title>100-Days-Challenge-Css</title>
-		<link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
+		<% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+		<link rel="stylesheet" href="<%= htmlWebpackPlugin.options.cdn.css[i] %>"/>
+		<% } %>
 		<script>
 			(function flexible(window, document) {
 				var docEl = document.documentElement;
